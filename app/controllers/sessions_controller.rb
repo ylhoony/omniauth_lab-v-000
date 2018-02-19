@@ -29,11 +29,8 @@ class SessionsController < ApplicationController
     end
 
     session[:user_id] = @user.id
-
-
-
-
-
+    
+    render "sessions/create"
   end
 
   private
