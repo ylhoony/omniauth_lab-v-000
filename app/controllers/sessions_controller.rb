@@ -4,8 +4,8 @@ class SessionsController < ApplicationController
     # raise params.inspect
     binding.pry
 
-    
-    
+
+
   end
 
 end
