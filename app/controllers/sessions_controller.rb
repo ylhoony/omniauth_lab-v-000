@@ -28,6 +28,8 @@ class SessionsController < ApplicationController
       u.uid = auth["uid"]
     end
 
+    session[:user_id] = @user.id
+
 
 
 
