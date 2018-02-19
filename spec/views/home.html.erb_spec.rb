@@ -1,5 +1,7 @@
 require "spec_helper"
 
+require 'pry'
+
 describe "welcome/home.html.erb" do
   it "displays all the widgets" do
     binding.pry
