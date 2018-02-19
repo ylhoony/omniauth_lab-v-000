@@ -21,6 +21,7 @@ class SessionsController < ApplicationController
     #     {"name"=>"Hoon Lee",
     #      "email"=>"dreamaire@hotmail.com",
     #      "id"=>"10156760494199749"}}}
+    @auth = auth
 
     @user = User.find_or_create_by(uid: auth[:uid]) do |u|
       u.name = auth["info"]["name"]
@@ -29,7 +30,7 @@ class SessionsController < ApplicationController
     end
 
     session[:user_id] = @user.id
-    
+
     render "sessions/create"
   end
 
