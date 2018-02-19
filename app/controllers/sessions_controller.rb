@@ -22,9 +22,13 @@ class SessionsController < ApplicationController
     #      "email"=>"dreamaire@hotmail.com",
     #      "id"=>"10156760494199749"}}}
 
-    @user = User.find_or_create_by(uid: auth[:uid])
+    @user = User.find_or_create_by(uid: auth[:uid]) do |u|
+      u.name = auth["info"]["name"]
+      u.email = auth["info"]["email"]
+      u.uid = auth["uid"]
+    end
 
-    
+
 
 
 
